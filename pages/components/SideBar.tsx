@@ -48,7 +48,7 @@ const SideBar = () => {
   const route = useRouter()
 
   return (
-    <Box h="calc(100vh - 100px)" bg="black" color="gray" paddingTop="24px">
+    <Box h="calc(100vh - 90px)" bg="black" color="gray" paddingTop="24px">
       <Box color="white" paddingX="24px" marginBottom="24px">
         <SpotifyIcon />
       </Box>
@@ -57,7 +57,7 @@ const SideBar = () => {
           <ListItem
             key={m.name}
             paddingX="16px"
-            bg={route.asPath === m.route ? 'gray.900' : ''}
+            bg={route.asPath === m.route ? 'gray.850' : ''}
             borderRadius="base"
           >
             <LinkBox>
@@ -66,7 +66,7 @@ const SideBar = () => {
                   display="flex"
                   alignItems="center"
                   h="40px"
-                  color="white"
+                  color={route.asPath === m.route ? 'white' : 'gray.400'}
                   gap="16px"
                 >
                   <ListIcon
