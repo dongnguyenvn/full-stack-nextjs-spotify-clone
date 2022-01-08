@@ -13,52 +13,47 @@ import {
 import Link from 'next/link'
 import { MdPlaylistAdd, MdFavorite } from 'react-icons/md'
 import { useRouter } from 'next/router'
-import {
-  HomeIcon,
-  LibraryIcon,
-  SearchIcon,
-  HomeActiveIcon,
-  SpotifyIcon,
-  SearchActiveIcon,
-  LibraryActiveIcon,
-} from './icon'
+import * as Icons from './icons'
 
 const navMenus = [
   {
     name: 'Home',
-    icon: HomeIcon,
-    iconActive: HomeActiveIcon,
+    icon: <Icons.HomeIcon />,
+    iconActive: <Icons.HomeActiveIcon />,
     route: '/',
   },
   {
     name: 'Search',
-    icon: SearchIcon,
-    iconActive: SearchActiveIcon,
+    icon: <Icons.SearchIcon />,
+    iconActive: <Icons.SearchActiveIcon />,
     route: '/search',
   },
   {
     name: 'Your Library',
-    icon: LibraryIcon,
-    iconActive: LibraryActiveIcon,
+    icon: <Icons.LibraryIcon />,
+    iconActive: <Icons.LibraryActiveIcon />,
     route: '/library',
   },
 ]
 
 const SideBar = () => {
-  const route = useRouter()
+  const router = useRouter()
+  const isActive = (route: string) => {
+    return router.asPath === route
+  }
 
   return (
     <Box h="calc(100vh - 90px)" bg="black" color="gray" paddingTop="24px">
       <Box color="white" paddingX="24px" marginBottom="24px">
-        <SpotifyIcon />
+        <Icons.SpotifyIcon />
       </Box>
-      <List paddingX="8px" spacing={2}>
+      <List paddingX="8px" spacing={0.5}>
         {navMenus.map((m) => (
           <ListItem
             key={m.name}
             paddingX="16px"
-            bg={route.asPath === m.route ? 'gray.850' : ''}
-            borderRadius="base"
+            bg={isActive(m.route) ? 'gray.850' : ''}
+            rounded="base"
           >
             <LinkBox>
               <Link href={m.route} passHref>
@@ -66,12 +61,10 @@ const SideBar = () => {
                   display="flex"
                   alignItems="center"
                   h="40px"
-                  color={route.asPath === m.route ? 'white' : 'gray.400'}
+                  color={isActive(m.route) ? 'white' : 'gray.400'}
                   gap="16px"
                 >
-                  <ListIcon
-                    as={route.asPath === m.route ? m.iconActive : m.icon}
-                  />
+                  {isActive(m.route) ? m.iconActive : m.icon}
                   <Text fontSize="14px" fontWeight="bold">
                     {m.name}
                   </Text>
