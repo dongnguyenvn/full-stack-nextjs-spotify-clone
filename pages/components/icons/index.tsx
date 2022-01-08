@@ -5,5 +5,8 @@ import SpotifyIcon from './SpotifyIcon'
 import HomeActiveIcon from './HomeActiveIcon'
 import SearchActiveIcon from './SearchActiveIcon'
 import LibraryActiveIcon from './LibraryActiveIcon'
+import AddIcon from './AddIcon'
+import EpisodesIcon from './EpisodesIcon'
+import HeartIcon from './HeartIcon'
 
-export {HomeIcon,LibraryIcon,SearchIcon,HomeActiveIcon,SpotifyIcon,SearchActiveIcon,LibraryActiveIcon}
+export {HomeIcon,LibraryIcon,SearchIcon,HomeActiveIcon,SpotifyIcon,SearchActiveIcon,LibraryActiveIcon,AddIcon,EpisodesIcon,HeartIcon}
