@@ -1,16 +1,23 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+@font-face {
+  font-family: 'Circular Spotify';
+  /* src: url('../public/fonts/D/Gilroy-Light.ttf');
+  src: url('../public/fonts/D/Gilroy-Bold.ttf');
+  src: url('../public/fonts/D/Gilroy-Heavy.ttf');
+  src: url('../public/fonts/D/Gilroy-Medium.ttf');
+  src: url('../public/fonts/D/Gilroy-Regular.ttf'); */
+  /* src: url('../public/fonts/C/Gotham-Black.otf');
+  src: url('../public/fonts/C/Gotham-Bold.otf');
+  src: url('../public/fonts/C/Gotham-Light.otf');
+  src: url('../public/fonts/C/Gotham-Thin.otf');
+  src: url('../public/fonts/C/Gotham-XLight.otf'); */
+  src: url('../public/fonts/Circular/CircularStd-Black.otf');
+  src: url('../public/fonts/Circular/CircularStd-Medium.otf');
+  src: url('../public/fonts/Circular/CircularStd-Book.otf');
+  src: url('../public/fonts/Circular/CircularStd-Bold.otf');
+  src: url('../public/fonts/Circular/CircularStd-Light.otf');
+  /* src: url('../public/fonts/Circular/CircularStd-BlackItalic.otf');
+  src: url('../public/fonts/Circular/CircularStd-BlackItalic.otf');
+  src: url('../public/fonts/Circular/CircularStd-BoldItalic.otf');
+  src: url('../public/fonts/Circular/CircularStd-BookItalic.otf'); */
+  /* src: url('../public/fonts/Circular/CircularStd-MediumItalic.otf'); */
 }
