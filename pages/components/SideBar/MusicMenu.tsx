@@ -53,7 +53,7 @@ const MusicMenu = () => {
                 gap="16px"
                 color={isActive(m.route) ? `white ` : `gray.200`}
                 opacity={isActive(m.route) ? '' : '0.7'}
-                _hover={isActive(m.route) ? {} : { opacity: '1' }}
+                _hover={{ opacity: '1' }}
                 transition="opacity ease-in-out 200ms"
               >
                 <Center
