@@ -1,5 +1,5 @@
 import authFetcher from './fetcher'
-import { UserInputAuth } from '../type'
+import { UserInputAuth } from '../types'
 
-export const auth = (mode: 'signin' | 'signup', body: UserInputAuth) =>
+export const auth = (mode: 'signin' | 'signup', body : UserInputAuth) =>
   authFetcher(`/${mode}`, body)

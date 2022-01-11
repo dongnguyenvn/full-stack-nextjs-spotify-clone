@@ -1,8 +1,8 @@
-import { UserInputAuth } from '../type'
+import { UserInputAuth } from '../types'
 
-export default function authFetcher(url: string, data?: UserInputAuth) {
+export default function authFetcher(url: string, data : UserInputAuth) {
   return fetch(`${window.location.origin}/api${url}`, {
-    method: data ? 'GET' : 'POST',
+    method:'POST',
     credentials: 'include',
     headers: {
       'Content-Type': 'application/json',
