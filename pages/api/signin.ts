@@ -38,8 +38,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     )
 
     res.json(user)
+  } else if (user) {
+    res.status(401)
+    res.json({ error: 'Password is wrong' })
   } else {
     res.status(401)
-    res.json({ error: 'Email or Password is wrong' })
+    res.json({ error: 'Email is wrong or user not exists' })
   }
 }
