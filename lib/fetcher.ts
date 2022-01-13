@@ -11,7 +11,7 @@ export function authFetcher(url: string, data?: UserInputAuth) {
   })
 }
 
-export async function userFetcher(url: string) {
+export async function dataFetcher<JSON = any>(url: string): Promise<JSON> {
   const res = await fetch(`${window.location.origin}/api${url}`, {
     method: 'GET',
     credentials: 'include',

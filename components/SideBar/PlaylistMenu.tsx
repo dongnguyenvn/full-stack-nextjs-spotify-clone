@@ -1,17 +1,17 @@
 import { Box, LinkBox, LinkOverlay, List, ListItem } from '@chakra-ui/layout'
 import Link from 'next/link'
+import { usePlaylist } from '../../hooks'
 import { scrollBar } from '../../theme/custom'
 
-const playlists = new Array(15)
-  .fill(1)
-  .map((_, i) => ({ name: `My playlist #${i + 1}` }))
-
 const PlaylistMenu = () => {
+  const { playLists, isLoading, isError } = usePlaylist()
+  if (isError) return <p>Error !</p>
+  if (isLoading) return <p>Loading ...</p>
   return (
-    <Box overflowY="auto" css={scrollBar} color='gray.400'>
+    <Box overflowY="auto" css={scrollBar} color="gray.400">
       <List spacing={2}>
-        {playlists.map((pl, i) => (
-          <ListItem key={i} paddingX='24px'>
+        {playLists.map((pl) => (
+          <ListItem key={pl.id} paddingX="24px">
             <LinkBox>
               <Link href="/">
                 <LinkOverlay>{pl.name}</LinkOverlay>
