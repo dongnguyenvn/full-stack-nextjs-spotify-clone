@@ -8,7 +8,7 @@ export const usePlaylist = () => {
     dataFetcher
   )
   return {
-    playLists: data as PlaylistApiResposive[],
+    playLists: (data as PlaylistApiResposive[]) || [],
     isLoading: !data && !error,
     isError: error,
   }

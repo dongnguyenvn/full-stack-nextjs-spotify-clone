@@ -1,4 +1,4 @@
-import { Box, LinkBox, LinkOverlay, List, ListItem } from '@chakra-ui/layout'
+import { Box, LinkBox, LinkOverlay, List, ListItem } from '@chakra-ui/react'
 import Link from 'next/link'
 import { usePlaylist } from '../../hooks'
 import { scrollBar } from '../../theme/custom'
@@ -13,7 +13,7 @@ const PlaylistMenu = () => {
         {playLists.map((pl) => (
           <ListItem key={pl.id} paddingX="24px">
             <LinkBox>
-              <Link href="/">
+              <Link href="#" passHref>
                 <LinkOverlay>{pl.name}</LinkOverlay>
               </Link>
             </LinkBox>
