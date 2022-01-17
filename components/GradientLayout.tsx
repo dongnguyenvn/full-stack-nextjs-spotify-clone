@@ -39,6 +39,7 @@ const GradientLayout: FC<GradientLayoutProps> = ({
             {description}
           </Text>
         </Box>
+        <Box></Box>
       </Flex>
     </Box>
   )
