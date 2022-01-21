@@ -4,17 +4,17 @@ import type { Song } from '../types/song'
 interface StoreModel {
   activeSongs: Song[]
   activeSong: Song | null
-  changeActiveSongs: Action<StoreModel, Song>
+  changeActiveSongs: Action<StoreModel, Song[]>
   changeActiveSong: Action<StoreModel, Song>
 }
 
 export const store = createStore<StoreModel>({
   activeSongs: [],
   activeSong: null,
-  changeActiveSongs: action((state: any, payload) => {
+  changeActiveSongs: action((state, payload) => {
     state.activeSongs = payload
   }),
-  changeActiveSong: action((state: any, payload) => {
+  changeActiveSong: action((state, payload) => {
     state.activeSong = payload
   }),
 })
