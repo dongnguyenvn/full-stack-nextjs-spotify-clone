@@ -12,8 +12,13 @@ const PlaylistMenu = () => {
       <List spacing={2}>
         {playLists.map((pl) => (
           <ListItem key={pl.id} paddingX="24px">
-            <LinkBox>
-              <Link href="#" passHref>
+            <LinkBox cursor='pointer'>
+              <Link
+                href={{
+                  pathname: '/playlist/[id]',
+                  query: { id: pl.id },
+                }}
+              >
                 <LinkOverlay>{pl.name}</LinkOverlay>
               </Link>
             </LinkBox>

@@ -35,4 +35,9 @@ const validateRoute = (handle: HandelType) => {
   }
 }
 
-export { validateRoute }
+const validateToken = (token: string) => {
+  const user = jwt.verify(token, 'hello') as UserApiResposive
+  return user
+}
+
+export { validateRoute, validateToken }
