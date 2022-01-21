@@ -2,18 +2,18 @@ import { Box } from '@chakra-ui/layout'
 import { Table, Thead, Td, Tr, Tbody, Th, IconButton } from '@chakra-ui/react'
 import { BsFillPlayFill } from 'react-icons/bs'
 import { AiOutlineClockCircle } from 'react-icons/ai'
-import { useStoreActions } from 'easy-peasy'
 import { formatDate, formatTime } from '../lib/formatters'
 import type { Song } from '../types/song'
 import { NextPage } from 'next'
+import { useStoreActions } from '../hooks/useStore'
 
 type SongTableProps = {
   songs: Song[]
 }
 
 const SongTable: NextPage<SongTableProps> = ({ songs }) => {
-  const playSongs = useStoreActions((store: any) => store.changeActiveSongs)
-  const setActiveSong = useStoreActions((store: any) => store.changeActiveSong)
+  const playSongs = useStoreActions((store) => store.changeActiveSongs)
+  const setActiveSong = useStoreActions((store) => store.changeActiveSong)
 
   const handlePlay = (activeSong?: Song) => {
     setActiveSong(activeSong || songs[0])
@@ -21,7 +21,7 @@ const SongTable: NextPage<SongTableProps> = ({ songs }) => {
   }
 
   return (
-    <Box bg="transparent" color="white" paddingBottom='40px' >
+    <Box bg="transparent" color="white" paddingBottom="40px">
       <Box padding="10px" marginBottom="20px">
         <Box marginBottom="30px">
           <IconButton
