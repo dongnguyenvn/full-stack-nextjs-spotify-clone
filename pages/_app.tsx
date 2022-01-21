@@ -7,7 +7,7 @@ import { Page } from '../types/page'
 const theme = extendTheme(themes)
 
 type MyAppProps = AppProps & {
-  Component : Page
+  Component: Page
 }
 // type MyAppProps = AppProps & {
 //   Component : NextComponentType & {
@@ -20,7 +20,7 @@ type MyAppProps = AppProps & {
 //   }
 // }
 
-const MyApp = ({ Component, pageProps } : MyAppProps) => {
+const MyApp = ({ Component, pageProps }: MyAppProps) => {
   return (
     <ChakraProvider theme={theme}>
       {Component.AuthPage ? (

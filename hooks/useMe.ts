@@ -1,11 +1,11 @@
 import useSWR from 'swr'
 import { dataFetcher } from '../lib/fetcher'
-import { UserApiResposive } from '../types/user'
+import { MeApiResposive } from '../types/user'
 
 export const useMe = () => {
-  const { data, error } = useSWR<UserApiResposive>('/me', dataFetcher)
+  const { data, error } = useSWR<MeApiResposive>('/me', dataFetcher)
   return {
-    user: data as UserApiResposive,
+    me: data as MeApiResposive,
     isLoading: !data && !error,
     isError: error,
   }

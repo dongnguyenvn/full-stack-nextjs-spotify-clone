@@ -30,20 +30,25 @@ const GradientLayout: FC<GradientLayoutProps> = ({
         <Box padding="20px">
           <Image boxSize="190px" boxShadow="2xl" src={image}></Image>
         </Box>
-        <Box padding="15px" color='white' display='flex' justifyContent='flex-end' flexDirection='column'>
+        <Box
+          padding="15px"
+          color="white"
+          display="flex"
+          justifyContent="flex-end"
+          flexDirection="column"
+        >
           <Text fontSize="x-small" fontWeight="bold" casing="uppercase">
             {subtitle}
           </Text>
-          <Text fontSize="48px" fontWeight='700'>{title}</Text>
+          <Text fontSize="48px" fontWeight="700">
+            {title}
+          </Text>
           <Text fontSize="sm" fontWeight="100">
             {description}
           </Text>
         </Box>
-        <Box></Box>
-        <Box></Box>
-        <Box></Box>
-        <Box></Box>
       </Flex>
+      <Box paddingY="50px">{children}</Box>
     </Box>
   )
 }

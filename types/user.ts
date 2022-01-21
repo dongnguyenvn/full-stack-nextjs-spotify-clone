@@ -3,7 +3,7 @@ export type UserInputAuth = {
     password : string
 }
 
-export type UserApiResposive = {
+export type MeApiResposive = {
     id: number
     createdAt: Date
     updatedAt: Date
@@ -11,4 +11,5 @@ export type UserApiResposive = {
     firstName: string
     lastName: string
     password: string
+    playlistCount : number
   }
