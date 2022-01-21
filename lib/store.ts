@@ -1,6 +1,14 @@
-import { createStore, action } from 'easy-peasy'
+import { createStore, action, Action } from 'easy-peasy'
+import type { Song } from '../types/song'
 
-export const store = createStore({
+interface StoreModel {
+  activeSongs: Song[]
+  activeSong: Song | null
+  changeActiveSongs: Action<StoreModel, Song>
+  changeActiveSong: Action<StoreModel, Song>
+}
+
+export const store = createStore<StoreModel>({
   activeSongs: [],
   activeSong: null,
   changeActiveSongs: action((state: any, payload) => {
