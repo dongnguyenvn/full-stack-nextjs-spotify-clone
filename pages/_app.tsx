@@ -3,6 +3,8 @@ import type { AppProps } from 'next/app'
 import { themes } from '../theme'
 import PlayerLayout from '../components/PlayerLayout'
 import { Page } from '../types/page'
+import { StoreProvider } from 'easy-peasy'
+import { store } from '../lib/store'
 
 const theme = extendTheme(themes)
 
@@ -23,13 +25,15 @@ type MyAppProps = AppProps & {
 const MyApp = ({ Component, pageProps }: MyAppProps) => {
   return (
     <ChakraProvider theme={theme}>
-      {Component.AuthPage ? (
-        <Component {...pageProps} />
-      ) : (
-        <PlayerLayout>
+      <StoreProvider store={store}>
+        {Component.AuthPage ? (
           <Component {...pageProps} />
-        </PlayerLayout>
-      )}
+        ) : (
+          <PlayerLayout>
+            <Component {...pageProps} />
+          </PlayerLayout>
+        )}
+      </StoreProvider>
     </ChakraProvider>
   )
 }

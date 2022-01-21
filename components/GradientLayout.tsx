@@ -1,6 +1,7 @@
 import { Box, Flex, Text } from '@chakra-ui/layout'
 import { Image } from '@chakra-ui/react'
 import { FC } from 'react'
+import { scrollBar } from '../theme/custom'
 
 type GradientLayoutProps = {
   color: string
@@ -25,6 +26,7 @@ const GradientLayout: FC<GradientLayoutProps> = ({
       h="100vh"
       overflowY="auto"
       bgGradient={`linear(${color}.500 0%, ${color}.600 15%, ${color}.700 40%, rgba(0,0,0.95) 75%)`}
+      css={scrollBar}
     >
       <Flex bg={`${color}.600`} padding="10px" align="end">
         <Box padding="20px">

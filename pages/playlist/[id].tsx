@@ -1,11 +1,10 @@
-import { color } from '@chakra-ui/react'
-import { GetServerSideProps, NextPageContext } from 'next'
-import { NextResponse } from 'next/server'
 import { FC } from 'react'
+import { GetServerSideProps } from 'next'
 import GradientLayout from '../../components/GradientLayout'
 import { validateToken } from '../../lib/auth'
 import prisma from '../../lib/prisma'
-import { Playlist } from '../../types/playlist'
+import type { Playlist } from '../../types/playlist'
+import SongTable from '../../components/SongTable'
 
 type PlaylistProps = {
   playlist: Playlist
@@ -36,7 +35,7 @@ const PlaylistPage: FC<PlaylistProps> = ({ playlist }) => {
       description={`${playlist.songs.length} songs`}
       image={`https://picsum.photos/400?random=${playlist.id}`}
     >
-      {playlist.name}
+      <SongTable songs={playlist.songs} />
     </GradientLayout>
   )
 }
