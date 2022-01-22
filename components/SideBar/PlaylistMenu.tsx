@@ -5,7 +5,7 @@ import { scrollBar } from '../../theme/custom'
 
 const PlaylistMenu = () => {
   const { playLists, isLoading, isError } = usePlaylist()
-  if (isError) return <p>Error !</p>
+  if (!playLists || isError) return <p>Error !</p>
   if (isLoading) return <p>Loading ...</p>
   return (
     <Box overflowY="auto" css={scrollBar} color="gray.400">

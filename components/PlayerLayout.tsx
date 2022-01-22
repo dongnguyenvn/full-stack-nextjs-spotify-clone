@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { Box } from '@chakra-ui/react'
 import SideBar from './SideBar'
+import PlayerBar from './PlayerBar'
 
 const PlayerLayout: FC = ({ children }) => {
   return (
@@ -24,7 +25,7 @@ const PlayerLayout: FC = ({ children }) => {
         bg="gray.900"
         w="full"
       >
-        player
+        <PlayerBar />
       </Box>
     </Box>
   )
